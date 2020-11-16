@@ -14,8 +14,7 @@ var $root = $('html, body');
 $(document).ready(function () {
 
     "use strict";
-    
-    pagePilling();
+
     colorScheme();
     menuToggler();
     sliderOwlCarousel();
@@ -33,8 +32,9 @@ $(document).ready(function () {
 });
 
 $window.on("load", (function() {
-    $("#overlayer").delay(200).fadeOut('slow');
-    $(".loader").delay(500).fadeOut('slow');
+    $("#overlayer").delay(500).fadeOut('slow');
+    $(".loader").delay(1000).fadeOut('slow');
+    pagePilling();
     portfolioIsotop();
 }));
 
@@ -64,7 +64,7 @@ function pagePilling(){
         direction: 'vertical',
         verticalCentered: true,
         navigation: {
-            'position': 'right',
+            'position': 'left',
             'tooltips': tooltips
         },
         loopBottom: true,
@@ -72,16 +72,15 @@ function pagePilling(){
         scrollingSpeed: 700,
         easing: 'swing',
         css3: true,
-        normalScrollElements: '.owl-stage-outer',
+        normalScrollElements: null,
         normalScrollElementTouchThreshold: 5,
         touchSensitivity: 5,
         keyboardScrolling: true,
         sectionSelector: '.section',
         animateAnchor: true,
         //events
-        onLeave: function(index, nextIndex, direction){},
-		afterLoad: function(anchorLink, index){},
-		afterRender: function(){},
+        afterRender: function() {},
+        afterLoad: function(anchorLink, index) {}
     });
 }
 
@@ -98,7 +97,6 @@ function colorScheme(){
         $(this).children().toggleClass('lni-night lni-sun');
     });
 }
-
 /*-------------------------
     MENU TOGGLER
 -------------------------*/
@@ -125,6 +123,7 @@ var footer = $('.footer');
 var backgrounImage = footer.data("background-image");
 footer.css('background', 'url(' + backgrounImage + ') no-repeat');
 
+
 /*-----------------------------
       SLIDER OWL CAROUSEL
 ------------------------------*/
@@ -136,6 +135,7 @@ function sliderOwlCarousel(){
         items: 1,
         nav: false,
         dots: false,
+        rtl: true,
         autoplay:true,
         touchDrag: true,
         smartSpeed: 5000,
@@ -282,6 +282,7 @@ function portfolioIsotop() {
     var $filter = $('#portfolio-filter');
     $container.isotope({
         filter: '*',
+        isOriginLeft: false,
         layoutMode: 'masonry',
         animationOptions: {
             duration: 750,
@@ -315,6 +316,7 @@ $(".testimonial .owl-carousel").owlCarousel({
     autoplay: false,
     center: false,
     dots: true,
+    rtl: true,
     mouseDrag: true,
     touchDrag: true,
     smartSpeed: 1000,
@@ -332,13 +334,13 @@ $(".testimonial .owl-carousel").owlCarousel({
             items:2,
         },
 
-    },
+    }
 });
 
 /*-------------------------
           GOOGLE Map
   -------------------------*/
-function mapInit() {
+  function mapInit() {
 
     "use strict";
     var myMap = $('#my-map');
