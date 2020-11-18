@@ -1,11 +1,3 @@
-/*-----------------------------------------------------------
-* Template Name    : Nill | Responsive One Page HTML Template
-* Author           : Retrinagroup
-* Version          : 1.0.0
-* Created          : January 2020
-* File Description : Main css file of the template
-*------------------------------------------------------------
-*/
 /***********************
     1.GENERAL
     2.PRELOADER
@@ -16,13 +8,11 @@
     7.RESUME
     8.SKILL
     9.SERVICES
-    10.PORTFOLIO
-    11.CLIENT
-    12.BLOG
-    13.CONTACT
-    14.FOOTER
-    15.NILL-DARK
-	16.RESPONSIVE
+    10.CLIENT
+    11.CONTACT
+    12.FOOTER
+    13.dark
+	  14.RESPONSIVE
 ************************/
 /*-------------------------
          GENERAL
@@ -351,8 +341,15 @@ header {
 .overlay-menu.show {
   opacity: 1;
   visibility: visible;
-  cursor: url(../img/cursor-white.png), auto;
+  cursor: url(../img/cursor-menu.png), auto;
 }
+
+.overlay-menu.show-home {
+  opacity: 1;
+  visibility: visible;
+  cursor: url(../img/cursor-home.png), auto;
+}
+
 
 .pilling-page .overlay-menu .overlay-menu-list .list-group-item {
   padding: 0;
@@ -739,146 +736,6 @@ ul.timeline > li:before {
 }
 
 /*-------------------------
-         PORTFOLIO
--------------------------*/
-.portfolio .portfolio-filter li a {
-  color: #222;
-  border-radius: 20px;
-  display: block;
-  padding: 5px 15px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.portfolio .portfolio-filter a.active {
-  background-color: #e24727 !important;
-  color: #ffffff !important;
-}
-
-.portfolio .portfolio-filter a:hover {
-  background-color: #e24727 !important;
-  color: #ffffff !important;
-}
-
-.portfolio .portfolio-item img {
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-}
-
-.portfolio .portfolio-item-content {
-  position: relative;
-  overflow: hidden;
-}
-
-.portfolio .portfolio-item-content:hover img {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  border-radius: 0.25rem;
-}
-
-.portfolio .portfolio-item-content:hover .img-overlay {
-  opacity: 1;
-  visibility: visible;
-  border-radius: 0.25rem;
-}
-
-.portfolio .portfolio-item-content img {
-  width: 100%;
-}
-
-.portfolio .img-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 74, 41, 0.3);
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  border-radius: 50%;
-}
-
-.portfolio .img-overlay:before {
-  content: "";
-  height: 45%;
-  width: 40%;
-  position: absolute;
-  border-top: 1px solid #ffffff;
-  border-left: 1px solid #ffffff;
-  top: 18px;
-  left: 18px;
-}
-
-.portfolio .img-overlay:after {
-  content: "";
-  height: 45%;
-  width: 40%;
-  position: absolute;
-  border-bottom: 1px solid #ffffff;
-  border-right: 1px solid #ffffff;
-  bottom: 18px;
-  right: 18px;
-}
-
-.portfolio .img-overlay-content {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-}
-
-.portfolio .img-overlay-content p {
-  background-color: #929292;
-  height: 35px;
-  width: 35px;
-  display: inline-block;
-}
-
-.portfolio .img-overlay-content i {
-  line-height: 35px;
-}
-
-.portfolio .img-overlay-content a:hover {
-  background-color: #e24727;
-  color: #ffffff;
-}
-
-.portfolio .portfolio-icon a, .portfolio .portfolio-icon button {
-  background-color: #ffffff;
-  color: rgba(0, 0, 0, 0.8);
-  width: 35px;
-  height: 35px;
-  line-height: 37px;
-  margin: 0 8px;
-  display: inline-block;
-  border-radius: 4px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  border: none;
-}
-
-.portfolio .portfolio-icon a i, .portfolio .portfolio-icon button i {
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.portfolio .portfolio-icon a:hover, .portfolio .portfolio-icon button:hover {
-  background-color: #e24727;
-  color: #ffffff;
-}
-
-.portfolio-single .modal-dialog {
-  max-width: 75%;
-}
-
-.max-width-450 {
-  max-width: 450px;
-  margin: 0 auto;
-}
-
-/*-------------------------
        TESTIMONIAL
 -------------------------*/
 .testimonial .owl-carousel{
@@ -963,36 +820,6 @@ ul.timeline > li:before {
 .testimonial .owl-stage-outer {
   padding-top: 1rem;
   padding-bottom: 3rem;
-}
-
-/*-------------------------
-          BLOG
--------------------------*/
-.blog .blog-item {
-  margin-bottom: 15px;
-  margin-top: 15px;
-}
-
-.blog .image-blog img {
-  width: 100%;
-}
-
-.blog .blog-content {
-  background-color: rgba(200, 200, 200, 0.05) !important;
-}
-
-.blog .blog-link button {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-}
-
-.blog .blog-link button:hover {
-  color: #b73c23 !important;
-}
-
-.blog-single .modal-dialog {
-  max-width: 75%;
 }
 
 /*-------------------------
@@ -1177,543 +1004,201 @@ ul.timeline > li:before {
 }
 
 /*-------------------------
-       Nill RTL
--------------------------*/
-.nill-rtl {
-  direction: rtl;
-  text-align: right;
-}
-
-.nill-rtl .logo {
-  direction: ltr;
-}
-
-.nill-rtl .overlay-menu-toggler {
-  left: 24px;
-  right: inherit;
-}
-
-.nill-rtl .socails {
-  padding-right: 0 !important;
-}
-
-.nill-rtl .socails li:first-child {
-  margin-right: 0 !important;
-}
-
-.nill-rtl .social-icon {
-  padding-right: 0 !important;
-}
-
-.nill-rtl .social-icon li:first-child {
-  margin-right: 0 !important;
-}
-
-.nill-rtl .social-icon li:last-child {
-  margin-right: 1rem !important;
-}
-
-.nill-rtl .title-small {
-  right: -7rem;
-}
-
-.nill-rtl .title-small p {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-.nill-rtl #pp-nav .active ~ .pp-tooltip {
-  padding-left: 1rem;
-}
-
-.nill-rtl #pp-nav .pp-tooltip {
-  padding-left: 0.5rem;
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
-}
-
-.nill-rtl #pp-nav li {
-  margin: 0.75rem 0;
-}
-
-.nill-rtl #pp-nav li .active span {
-  -webkit-transform: translateX(0px);
-  transform: translateX(0px);
-}
-
-.nill-rtl #pp-nav.left {
-  left: 37px;
-}
-
-.nill-rtl .about a.pill-button:first-child {
-  margin-left: 1.5rem;
-}
-
-.nill-rtl .resume ul.timeline::before {
-  left: inherit;
-  right: 9px;
-}
-
-.nill-rtl .resume ul.timeline > li::before {
-  left: inherit;
-  right: -40px;
-}
-
-.nill-rtl .skill-box .skillbar-bar {
-  float: right;
-}
-
-.nill-rtl .skill-box .skillbar-title {
-  left: inherit;
-  right: 3px;
-}
-
-.nill-rtl .skill-box .skill-bar-percent {
-  right: inherit;
-  left: 0;
-}
-
-.nill-rtl .services .services-content {
-  padding-left: inherit;
-  padding-right: 3rem;
-}
-
-.nill-rtl .testimonial-item h4 {
-  float: right;
-}
-
-.nill-rtl .blog-content ul {
-  padding-right: 0 !important;
-}
-
-.nill-rtl .modal-header .close {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.nill-rtl ul.checkmark-list {
-  padding-right: 0 !important;
-}
-
-.nill-rtl .mfp-counter {
-  direction: ltr;
-}
-
-.nill-rtl .contact h6 {
-  text-align: right;
-}
-
-.nill-rtl .contact-form div, .nill-rtl .contact-form h6, .nill-rtl .contact-form p {
-  text-align: right;
-}
-
-.nill-rtl .contact #message.toast {
-  left: -20px;
-}
-
-.nill-rtl .contact #message.toast button {
-  float: left;
-  padding-right: inherit;
-  padding-left: 1rem !important;
-}
-
-.nill-rtl .color-scheme {
-  right: inherit;
-  left: 31px;
-}
-
-.nill-rtl .color-scheme i {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  display: inline-block;
-}
-
-.nill-rtl .error-404 h1 {
-  direction: ltr !important;
-}
-
-.nill-rtl .right-social {
-  right: initial;
-  left: 25px;
-}
-
-.nill-rtl .right-social .social-icon li:last-child {
-  margin-right: 0 !important;
-}
-
-/*-------------------------
-    MONO
--------------------------*/
-.mono .base-color {
-  color: #2a2a2b !important;
-}
-
-.mono .bg-base-color {
-  background-color: #2a2a2b !important;
-}
-
-.mono .pill-button {
-  background-color: #2a2a2b;
-  border: 2px solid #2a2a2b;
-}
-
-.mono .pill-button:hover {
-  background-color: black;
-  border-color: black;
-}
-
-.mono .loader {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.mono #pp-nav li .active span {
-  background-color: #2a2a2b;
-}
-
-.mono .title-small p:before {
-  background: #2a2a2b;
-}
-
-.mono .title-small p:after {
-  background: #2a2a2b;
-}
-
-.mono .overlay-menu a:hover {
-  color: #ffffff !important;
-}
-
-.mono .overlay-menu a.active {
-  color: #ffffff !important;
-}
-
-.mono .hero .social-icon .list-inline-item i:hover {
-  color: black !important;
-}
-
-.mono ul.timeline > li:before {
-  border: 3px solid #2a2a2b;
-}
-
-.mono .skill-box .skillbar-bar {
-  background: #2a2a2b;
-}
-
-.mono .portfolio .portfolio-filter a.active {
-  background-color: black !important;
-}
-
-.mono .portfolio .portfolio-filter a:hover {
-  background-color: black !important;
-}
-
-.mono .portfolio .img-overlay {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.mono .portfolio .img-overlay-content a:hover {
-  background-color: black;
-}
-
-.mono .portfolio .portfolio-icon a:hover, .mono .portfolio .portfolio-icon button:hover {
-  background-color: black;
-}
-
-.mono .testimonial .owl-dot.active span {
-  background-color: black;
-}
-
-.mono .testimonial .owl-carousel .testimonial-item img {
-  border: 2px solid #777777;
-}
-
-.mono .testimonial .owl-nav .owl-prev span, .mono .testimonial .owl-nav .owl-next span {
-  background: black;
-}
-
-.mono .blog .blog-link button {
-  color: #2a2a2b;
-}
-
-.mono .blog .blog-link button:hover {
-  color: black !important;
-}
-
-.mono .footer .socails li i:hover {
-  color: black !important;
-}
-
-.mono .right-social ul li a:hover i {
-  color: black !important;
-}
-
-/*-------------------------
        Nill DARK
 -------------------------*/
-body.nill-dark {
+body.dark {
   background-color: #222;
   color: #ffffff;
 }
 
-.nill-dark .hero, .nill-dark .hero-02 .hero-item1, .nill-dark .hero-02 .hero-item2, .nill-dark .hero-02 .hero-item3, .nill-dark .footer {
+.dark .hero, .dark .hero-02 .hero-item1, .dark .hero-02 .hero-item2, .dark .hero-02 .hero-item3, .dark .footer {
   -webkit-box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.8);
           box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.8);
 }
 
-.nill-dark .hero-03 {
+.dark .hero-03 {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.nill-dark .hero-04 .swiper-slide {
+.dark .hero-04 .swiper-slide {
   background-color: #222;
 }
 
-.nill-dark .hero-04 .swiper-button-next, .nill-dark .hero-04 .swiper-button-prev {
+.dark .hero-04 .swiper-button-next, .dark .hero-04 .swiper-button-prev {
   background-color: #ffffff;
 }
 
-.nill-dark .hero-04 .swiper-button-next:after, .nill-dark .hero-04 .swiper-button-prev:after {
+.dark .hero-04 .swiper-button-next:after, .dark .hero-04 .swiper-button-prev:after {
   color: #222;
 }
 
-.nill-dark .text-dark {
+.dark .text-dark {
   color: #f4f4f4 !important;
 }
 
-.nill-dark a.text-dark:hover {
+.dark a.text-dark:hover {
   color: #f4f4f4 !important;
 }
 
-.nill-dark a.text-dark:focus {
+.dark a.text-dark:focus {
   color: #f4f4f4 !important;
 }
 
-.nill-dark .comment-info a {
+.dark .comment-info a {
   color: #f4f4f4 !important;
 }
 
-.nill-dark .comment-info a:hover {
+.dark .comment-info a:hover {
   color: #e24727 !important;
 }
 
-.nill-dark .form-item .form-control {
+.dark .form-item .form-control {
   color: #f4f4f4 !important;
   border-bottom: 1px solid #eee;
   background: transparent;
 }
 
-.nill-dark .form-item .form-control:focus {
+.dark .form-item .form-control:focus {
   border-bottom: 1px solid #e24727;
 }
 
-.nill-dark .text-muted {
+.dark .text-muted {
   color: #dbdbdb !important;
 }
 
-.nill-dark .bg-dark, .nill-dark .bg-white {
+.dark .bg-dark, .dark .bg-white {
   background-color: #222 !important;
 }
 
-.nill-dark .services-item {
+.dark .services-item {
   background-color: #2a2a2b !important;
 }
 
-.nill-dark .img-thumbnail {
+.dark .img-thumbnail {
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-.nill-dark #pp-nav li span, .nill-dark .pp-slidesNav span {
+.dark #pp-nav li span, .dark .pp-slidesNav span {
   background-color: #eee;
 }
 
-.nill-dark #pp-nav li .active span, .nill-dark .pp-slidesNav .active span {
+.dark #pp-nav li .active span, .dark .pp-slidesNav .active span {
   background-color: #e24727;
 }
 
-.nill-dark .pp-tooltip {
+.dark .pp-tooltip {
   color: #f4f4f4 !important;
 }
 
-.nill-dark .overlay-menu-toggler {
+.dark .overlay-menu-toggler {
   color: #eee !important;
 }
 
-.nill-dark .portfolio-filter li a {
-  color: #dbdbdb !important;
-}
-
-.nill-dark .portfolio .portfolio-item-content {
-  border-color: rgba(27, 30, 33, 0.9);
-}
-
-.nill-dark .portfolio .portfolio-item-content:hover {
-  background-color: rgba(27, 30, 33, 0.9);
-}
-
-.nill-dark .portfolio .portfolio-icon a {
-  color: #222;
-  background-color: #f4f4f4;
-}
-
-.nill-dark .portfolio .portfolio-icon a:hover {
-  background-color: #e24727;
-  color: #f4f4f4;
-}
-
-.nill-dark .testimonial .testimonial-item {
+.dark .testimonial .testimonial-item {
   background-color: #2a2a2b !important;
 }
 
-.nill-dark .blog .blog-content {
-  background-color: #2a2a2b !important;
-}
-
-.nill-dark .blog .blog-link:hover {
-  color: #f4f4f4;
-}
-
-.nill-dark .blog .blog-item h5 a:hover {
+.dark .navbar-nav .nav-item a:hover, .dark .navbar a:hover {
   color: #e24727 !important;
 }
 
-.nill-dark .navbar-nav .nav-item a:hover, .nill-dark .navbar a:hover {
+.dark .navbar a:hover {
   color: #e24727 !important;
 }
 
-.nill-dark .navbar a:hover {
-  color: #e24727 !important;
-}
-
-.nill-dark .testimonial .owl-dot span {
+.dark .testimonial .owl-dot span {
   background-color: #dbdbdb;
 }
 
-.nill-dark .testimonial .owl-dot.active span {
+.dark .testimonial .owl-dot.active span {
   background-color: #e24727;
 }
 
-.nill-dark .blog .blog-link button:hover {
-  color: #dbdbdb !important;
-}
-
-.nill-dark .pill-button:hover {
+.dark .pill-button:hover {
   color: #f4f4f4;
 }
 
-.nill-dark.mono .base-color {
+.dark.mono .base-color {
   color: #ffffff !important;
 }
 
-.nill-dark.mono .bg-base-color {
+.dark.mono .bg-base-color {
   background-color: #ffffff !important;
 }
 
-.nill-dark.mono .pill-button {
+.dark.mono .pill-button {
   background-color: #f0f0f0;
   border: 2px solid #f0f0f0;
   color: #2a2a2b;
 }
 
-.nill-dark.mono .pill-button:hover {
+.dark.mono .pill-button:hover {
   background-color: #ffffff;
   border-color: #ffffff;
 }
 
-.nill-dark.mono #pp-nav li .active span {
+.dark.mono #pp-nav li .active span {
   background-color: #ffffff !important;
 }
 
-.nill-dark.mono .title-small p:before {
+.dark.mono .title-small p:before {
   background: #ffffff;
 }
 
-.nill-dark.mono .title-small p:after {
+.dark.mono .title-small p:after {
   background: #ffffff;
 }
 
-.nill-dark.mono .hero .social-icon .list-inline-item i:hover {
+.dark.mono .hero .social-icon .list-inline-item i:hover {
   color: #a8a8a8 !important;
 }
 
-.nill-dark.mono ul.timeline > li:before {
+.dark.mono ul.timeline > li:before {
   border: 3px solid #ffffff;
 }
 
-.nill-dark.mono .skill-box .skillbar-bar {
+.dark.mono .skill-box .skillbar-bar {
   background: #ffffff;
 }
 
-.nill-dark.mono .skill-box .skillbar {
+.dark.mono .skill-box .skillbar {
   background-color: #929292;
 }
 
-.nill-dark.mono .portfolio .portfolio-filter a.active {
-  background-color: #ffffff !important;
-  color: #2a2a2b !important;
-}
-
-.nill-dark.mono .portfolio .portfolio-filter a:hover {
-  background-color: #ffffff !important;
-  color: #2a2a2b !important;
-}
-
-.nill-dark.mono .portfolio .img-overlay {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.nill-dark.mono .portfolio .img-overlay-content a:hover {
+.dark.mono .testimonial .owl-dot.active span {
   background-color: #a8a8a8;
 }
 
-.nill-dark.mono .portfolio .portfolio-icon a:hover, .nill-dark.mono .portfolio .portfolio-icon button:hover {
-  background-color: #a8a8a8;
-}
-
-.nill-dark.mono .testimonial .owl-dot.active span {
-  background-color: #a8a8a8;
-}
-
-.nill-dark.mono .testimonial .owl-carousel .testimonial-item img {
+.dark.mono .testimonial .owl-carousel .testimonial-item img {
   border: 2px solid white;
 }
 
-.nill-dark.mono .testimonial .owl-nav .owl-prev span, .nill-dark.mono .testimonial .owl-nav .owl-next span {
+.dark.mono .testimonial .owl-nav .owl-prev span, .dark.mono .testimonial .owl-nav .owl-next span {
   background: #a8a8a8;
 }
 
-.nill-dark.mono .blog .blog-item h5 a:hover {
-  color: #f4f4f4 !important;
-}
-
-.nill-dark.mono .blog .blog-link button {
-  color: #ffffff;
-}
-
-.nill-dark.mono .blog .blog-link button:hover {
-  color: #f4f4f4 !important;
-}
-
-.nill-dark.mono .footer .socails li i:hover {
+.dark.mono .footer .socails li i:hover {
   color: #919191 !important;
 }
 
-.nill-dark.mono .color-scheme i {
+.dark.mono .color-scheme i {
   color: #2a2a2b;
 }
 
-.nill-dark.mono .right-social ul li a:hover i {
+.dark.mono .right-social ul li a:hover i {
   color: #ffffff !important;
 }
 
 @media (max-width: 991px) {
-  .nill-dark .hero-04 .swiper-slide {
+  .dark .hero-04 .swiper-slide {
     background-color: rgba(0, 0, 0, 0.8) !important;
   }
 }
 
 @media (max-width: 767px) {
-  .nill-dark header {
+  .dark header {
     background-color: #222 !important;
     -webkit-box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.4);
             box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.4);
@@ -1893,8 +1378,5 @@ body.nill-dark {
   }
   .testimonial .testimonial-item {
     padding: 15px;
-  }
-  .blog-single .modal-dialog, .portfolio-single .modal-dialog {
-    max-width: 100%;
   }
 }

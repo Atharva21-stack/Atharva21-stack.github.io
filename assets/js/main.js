@@ -1,13 +1,5 @@
-/*-----------------------------------------------------------
-* Template Name    : Nill | Bootstrap 4 personal, portfolio and resume
-* Author           : Retrinagroup
-* Version          : 1.0.0
-* Created          : Dec 2019
-* File Description : Main js file of the template
-*------------------------------------------------------------
-*/
-
 // repeated variables
+
 var $window = $(window);
 var $root = $('html, body');
 
@@ -15,6 +7,7 @@ $(document).ready(function () {
 
     "use strict";
 
+    pagePilling();
     colorScheme();
     menuToggler();
     sliderOwlCarousel();
@@ -27,28 +20,23 @@ $(document).ready(function () {
     validateEmail();
     sendEmail();
     $('.owl-item.active .hero-slide').addClass('zoom');
-    
+
 
 });
 
-$window.on("load", (function() {
-    $("#overlayer").delay(500).fadeOut('slow');
-    $(".loader").delay(1000).fadeOut('slow');
-    pagePilling();
+$window.on("load", (function () {
+    $("#overlayer").delay(200).fadeOut('slow');
+    $(".loader").delay(500).fadeOut('slow');
     portfolioIsotop();
 }));
-
-/*-----------------------------------------------------------------------------
-                                   FUNCTIONS
------------------------------------------------------------------------------*/
 
 /*-------------------------
        Page Pilling
 -------------------------*/
-function pagePilling(){
+function pagePilling() {
 
     "use strict";
-    
+
     var ids = [];
     var tooltips = [];
     var colors = [];
@@ -64,7 +52,7 @@ function pagePilling(){
         direction: 'vertical',
         verticalCentered: true,
         navigation: {
-            'position': 'left',
+            'position': 'right',
             'tooltips': tooltips
         },
         loopBottom: true,
@@ -72,31 +60,33 @@ function pagePilling(){
         scrollingSpeed: 700,
         easing: 'swing',
         css3: true,
-        normalScrollElements: null,
+        normalScrollElements: '.owl-stage-outer',
         normalScrollElementTouchThreshold: 5,
         touchSensitivity: 5,
         keyboardScrolling: true,
         sectionSelector: '.section',
         animateAnchor: true,
         //events
-        afterRender: function() {},
-        afterLoad: function(anchorLink, index) {}
+        onLeave: function (index, nextIndex, direction) { },
+        afterLoad: function (anchorLink, index) { },
+        afterRender: function () { },
     });
 }
 
 /*-------------------------
         Color Scheme
 -------------------------*/
-function colorScheme(){
+function colorScheme() {
 
     "use strict";
 
-    $('.color-scheme').click(function() {
-        $("body").toggleClass('nill-dark');
+    $('.color-scheme').click(function () {
+        $("body").toggleClass('dark');
         $('.section').toggleClass('bg-dark');
         $(this).children().toggleClass('lni-night lni-sun');
     });
 }
+
 /*-------------------------
     MENU TOGGLER
 -------------------------*/
@@ -104,11 +94,19 @@ function menuToggler() {
 
     "use strict";
 
-    $(".header-info-area").click(function(){
+    $(".header-info-area").click(function () {
         $('.overlay-menu').toggleClass("show");
     });
 }
 
+function menuTogglerHome() {
+
+    "use strict";
+
+    $(".header-info-area").click(function () {
+        $('.overlay-menu').toggleClass("show-home");
+    });
+}
 /*--------------------------
     HERO BACKGROUND IMAGE
 ---------------------------*/
@@ -123,43 +121,41 @@ var footer = $('.footer');
 var backgrounImage = footer.data("background-image");
 footer.css('background', 'url(' + backgrounImage + ') no-repeat');
 
-
 /*-----------------------------
       SLIDER OWL CAROUSEL
 ------------------------------*/
-function sliderOwlCarousel(){
+function sliderOwlCarousel() {
     "use strict";
 
     $('.hero .owl-carousel').owlCarousel({
-        loop:true,
+        loop: true,
         items: 1,
         nav: false,
         dots: false,
-        rtl: true,
-        autoplay:true,
+        autoplay: true,
         touchDrag: true,
         smartSpeed: 5000,
         animateOut: 'fadeOut',
         autoplayHoverPause: true,
     });
-    $('#hero-slider').on("translate.owl.carousel", function(){
-        setTimeout(function(){
+    $('#hero-slider').on("translate.owl.carousel", function () {
+        setTimeout(function () {
             $('.hero-slide').removeClass("zoom");
         }, 1000)
-	});
-	$('#hero-slider').on("translated.owl.carousel", function(){
-		$('.owl-item.active .hero-slide').addClass("zoom");
+    });
+    $('#hero-slider').on("translated.owl.carousel", function () {
+        $('.owl-item.active .hero-slide').addClass("zoom");
     });
 }
 
 /*-----------------------------
      HERO SWIPER SLIDER
 ------------------------------*/
-function swiperSlider(){
+function swiperSlider() {
 
     "use strict";
-    
-    if($(".swiper-container").length){
+
+    if ($(".swiper-container").length) {
         var swiper = new Swiper('.swiper-container', {
             effect: "slide",
             allowTouchMove: 'false',
@@ -169,12 +165,12 @@ function swiperSlider(){
                 delay: 5000,
             },
             navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
-          });
-        
-          var textSwiper = new Swiper('.text-swiper', {
+        });
+
+        var textSwiper = new Swiper('.text-swiper', {
             effect: "fade",
             allowTouchMove: 'false',
             touchRatio: 0,
@@ -183,11 +179,11 @@ function swiperSlider(){
                 delay: 5000,
             },
             navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
-          });
-        
+        });
+
         $(".hero-item-image").css('background', function () {
             var bg = ('url(' + $(this).data("image-src") + ') no-repeat center');
             return bg;
@@ -205,7 +201,7 @@ function typedJS() {
     "use strict";
 
     var $element = $(".element");
-    if($element.length){
+    if ($element.length) {
         var options = {
             strings: $element.attr('data-elements').split(','),
             typeSpeed: 100,
@@ -223,7 +219,7 @@ function typedJS() {
 function skills() {
 
     "use strict";
-    
+
     $('.skillbar').each(function () {
         $(this).find('.skillbar-bar').animate({
             width: $(this).attr('data-percent')
@@ -250,22 +246,22 @@ function portfolioPopup() {
     "use strict";
 
     if (('.portfolio-items').length > 0) {
-        $('.portfolio-items').each(function() {
+        $('.portfolio-items').each(function () {
             $(this).magnificPopup({
                 delegate: '.js-zoom-gallery',
                 type: 'image',
                 gallery: {
-                    enabled:true
+                    enabled: true
                 },
                 callbacks: {
-                    open: function() {
+                    open: function () {
                         $.fn.pagepiling.setKeyboardScrolling(false);
-                      
+
                     },
-                    close: function() {
+                    close: function () {
                         $.fn.pagepiling.setKeyboardScrolling(true);
                     }
-                  }
+                }
             });
         });
     }
@@ -282,14 +278,13 @@ function portfolioIsotop() {
     var $filter = $('#portfolio-filter');
     $container.isotope({
         filter: '*',
-        isOriginLeft: false,
         layoutMode: 'masonry',
         animationOptions: {
             duration: 750,
             easing: 'linear'
         }
     });
-    $filter.find('a').on("click",function() {
+    $filter.find('a').on("click", function () {
         var selector = $(this).attr('data-filter');
         $filter.find('a').removeClass('active');
         $(this).addClass('active');
@@ -309,43 +304,42 @@ function portfolioIsotop() {
     Testimonial CAROUSEL JS
 -------------------------*/
 $(".testimonial .owl-carousel").owlCarousel({
-    loop:true,
-    stagePadding:5,
+    loop: true,
+    stagePadding: 5,
     margin: 10,
     nav: true,
     autoplay: false,
     center: false,
     dots: true,
-    rtl: true,
     mouseDrag: true,
     touchDrag: true,
     smartSpeed: 1000,
     autoplayHoverPause: false,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
+    responsiveClass: true,
+    responsive: {
+        0: {
+            items: 1,
         },
-        600:{
-            items:1,
+        600: {
+            items: 1,
         },
-        1200:{
-            margin:60,
-            items:2,
+        1200: {
+            margin: 60,
+            items: 2,
         },
 
-    }
+    },
 });
 
 /*-------------------------
           GOOGLE Map
   -------------------------*/
-  function mapInit() {
+function mapInit() {
 
     "use strict";
     var myMap = $('#my-map');
 
-    if(myMap.length){
+    if (myMap.length) {
         var lat = myMap.data("location-lat");
         var lng = myMap.data("location-lng");
         var options = {
@@ -501,52 +495,52 @@ function sendEmail() {
 
     "use strict";
 
-    var name     = $('#name').val();
-    var email    = $('#email').val();
+    var name = $('#name').val();
+    var email = $('#email').val();
     //var subject  = $('#subject').val();
     var comments = $('#comments').val();
-    $('#submit-btn').on("click", (function() {
+    $('#submit-btn').on("click", (function () {
         $('#message').toast('show');
     }))
 
-    if(!name){
+    if (!name) {
         $('#message').toast('show').css("background-color", "#dc3545");
         $('.toast-body').html($('#name').data('name-error'));
-    } else if(!email){
+    } else if (!email) {
         $('#message').toast('show').css("background-color", "#dc3545");
         $('.toast-body').html($('#email').data('email-error'));
-    } else if(!validateEmail(email)){
+    } else if (!validateEmail(email)) {
         $('#message').toast('show').css("background-color", "#dc3545");
         $('.toast-body').html($('#email').data('email-valid'));
-    } 
+    }
     //else if(!subject){
     //     $('.toast-body').html('Subject is  required');
     // }
-    else if(!comments){
+    else if (!comments) {
         $('.toast-body').html($('#comments').data('comment-error'));
-    }else {
+    } else {
         $.ajax({
             type: 'POST',
             data: $("#contactForm").serialize(),
-            url:  "sendEmail.php",
-            beforeSend: function() {
+            url: "sendEmail.php",
+            beforeSend: function () {
                 $('#submit-btn').html('<span class="spinner-border spinner-border-sm"></span> Loading..');
             },
-            success: function(data) {
+            success: function (data) {
                 $('#submit-btn').html('Submit');
                 var myObj = JSON.parse(data);
-                if(myObj['status']=='Congratulation'){
+                if (myObj['status'] == 'Congratulation') {
                     $('#message').toast('show').css("background-color", "#5cb85c");
-                    $('.toast-body').html('<strong>'+ myObj['status'] +' : </strong> '+ myObj['message']);
-                }else if(myObj['status']=='Error'){
+                    $('.toast-body').html('<strong>' + myObj['status'] + ' : </strong> ' + myObj['message']);
+                } else if (myObj['status'] == 'Error') {
                     $('#message').toast('show').css("background-color", "#5cb85c");
-                    $('.toast-body').html('<strong>'+ myObj['status'] +' : </strong> '+ myObj['message']);
-                }else if(myObj['status']=='Warning'){
+                    $('.toast-body').html('<strong>' + myObj['status'] + ' : </strong> ' + myObj['message']);
+                } else if (myObj['status'] == 'Warning') {
                     $('#message').toast('show').css("background-color", "#5cb85c");
-                    $('.toast-body').html('<strong>'+ myObj['status'] +' : </strong> '+ myObj['message']);
+                    $('.toast-body').html('<strong>' + myObj['status'] + ' : </strong> ' + myObj['message']);
                 }
             },
-            error: function(xhr) {
+            error: function (xhr) {
                 $('#submit-btn').html('Send Message');
                 $('.toast-body').html('<strong> Error : </strong> Something went wrong, try again.');
             },
