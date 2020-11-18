@@ -1,4 +1,5 @@
 // repeated variables
+
 var $window = $(window);
 var $root = $('html, body');
 
@@ -28,10 +29,6 @@ $window.on("load", (function () {
     $(".loader").delay(500).fadeOut('slow');
     portfolioIsotop();
 }));
-
-/*-----------------------------------------------------------------------------
-                                   FUNCTIONS
------------------------------------------------------------------------------*/
 
 /*-------------------------
        Page Pilling
