@@ -136,20 +136,15 @@ a, button {
 /*-------------------------
         PRELOADER
 -------------------------*/
-#overlayer {
-  width: 100%;
+#loading {
+  background: url('ld.gif') no-repeat center center;
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
-  position: fixed;
-  z-index: 9999;
-  background: #222;
-}
-
-.loader {
-  position: fixed;
-  top: calc(50% - 20px);
-  left: calc(50% - 20px);
-  z-index: 99999;
-  color: #e24727;
+  width: 100%;
+  z-index: 9999999;
 }
 
 /*-------------------------
@@ -1068,7 +1063,7 @@ body.dark {
 }
 
 .dark .bg-dark, .dark .bg-white {
-  background-color: #222 !important;
+  background-color: rgb(0, 0, 0) !important;
 }
 
 .dark .services-item {
