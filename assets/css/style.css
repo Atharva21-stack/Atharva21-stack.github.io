@@ -134,20 +134,6 @@ a, button {
 }
 
 /*-------------------------
-        PRELOADER
--------------------------*/
-#loading {
-  background: url('ld.gif') no-repeat center center;
-  background-color: #000000;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 9999999;
-}
-
-/*-------------------------
         FIX
 -------------------------*/
 header {
